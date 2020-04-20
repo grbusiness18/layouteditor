@@ -1,0 +1,354 @@
+{
+  "metadata": [
+    {
+      "id": "af.opr.Function",
+      "description": "Function Operator",
+      "category": "code",
+      "ports": {
+        "hasInport": true,
+        "hasOutport": true,
+        "allowIPExt": false,
+        "allowOPExt": false,
+        "maxOP": 10,
+        "maxIP": 10,
+        "minOP": 1,
+        "minIP": 1
+      },
+      "textbox": {
+        "show": true,
+        "allowChange": false,
+        "value": "Function",
+        "size": "12",
+        "color": "black",
+        "background-color": "",
+        "weight": "",
+        "border-size": "",
+        "border-color": "",
+        "height": "",
+        "width": ""
+      },
+      "iconbox": {
+        "show": true,
+        "allowChange": false,
+        "value": "fa fa-code",
+        "size": "12",
+        "color": "black",
+        "background-color": "",
+        "weight": "bolder",
+        "border-size": "",
+        "border-color": "",
+        "height": "",
+        "width": ""
+      },
+      "innerbox": {
+        "show": true,
+        "allowChange": false,
+        "value": "Function",
+        "size": "12",
+        "color": "black",
+        "background-color": "#ffd966",
+        "weight": "bold",
+        "border-size": "",
+        "border-color": "#8c8c8c",
+        "height": "",
+        "width": ""
+      },
+      "components": ["c1", "c2", "c3"]
+    },
+    {
+      "id": "af.opr.Logger",
+      "description": "Logger Operator",
+      "category": "utility",
+      "ports": {
+        "hasInport": true,
+        "hasOutport": false,
+        "allowIPExt": false,
+        "allowOPExt": false,
+        "maxOP": 10,
+        "maxIP": 10,
+        "minOP": 1,
+        "minIP": 1
+      },
+      "textbox": {
+        "show": true,
+        "allowChange": false,
+        "value": "Logger",
+        "size": "12",
+        "color": "black",
+        "background-color": "",
+        "weight": "",
+        "border-size": "",
+        "border-color": "",
+        "height": "",
+        "width": ""
+      },
+      "iconbox": {
+        "show": true,
+        "allowChange": false,
+        "value": "fa fa-list-alt",
+        "size": "12",
+        "color": "black",
+        "background-color": "",
+        "weight": "bolder",
+        "border-size": "",
+        "border-color": "",
+        "height": "",
+        "width": ""
+      },
+      "innerbox": {
+        "show": true,
+        "allowChange": false,
+        "value": "",
+        "size": "12",
+        "color": "black",
+        "background-color": "#66d9ff",
+        "weight": "bold",
+        "border-size": "",
+        "border-color": "#8c8c8c",
+        "height": "",
+        "width": ""
+      },
+      "components": ["c2"]
+    },
+      {
+      "id": "af.opr.FlowConnector",
+      "description": "Flow Connector",
+      "category": "Network",
+      "ports": {
+        "hasInport": false,
+        "hasOutport": true,
+        "allowIPExt": false,
+        "allowOPExt": false,
+        "maxOP": 10,
+        "maxIP": 0,
+        "minOP": 1,
+        "minIP": 0
+      },
+      "textbox": {
+        "show": true,
+        "allowChange": false,
+        "value": "Flow Connector",
+        "size": "12",
+        "color": "black",
+        "background-color": "",
+        "weight": "",
+        "border-size": "",
+        "border-color": "",
+        "height": "",
+        "width": ""
+      },
+      "iconbox": {
+        "show": true,
+        "allowChange": false,
+        "value": "fa fa-list-alt",
+        "size": "12",
+        "color": "black",
+        "background-color": "",
+        "weight": "bolder",
+        "border-size": "",
+        "border-color": "",
+        "height": "",
+        "width": ""
+      },
+      "innerbox": {
+        "show": true,
+        "allowChange": false,
+        "value": "",
+        "size": "12",
+        "color": "black",
+        "background-color": "#80aaff",
+        "weight": "bold",
+        "border-size": "",
+        "border-color": "#8c8c8c",
+        "height": "",
+        "width": ""
+      },
+      "components": ["c2"]
+    },
+      {
+      "id": "af.opr.ApiProcessor",
+      "description": "Api Process",
+      "category": "Network",
+      "ports": {
+        "hasInport": true,
+        "hasOutport": true,
+        "allowIPExt": false,
+        "allowOPExt": false,
+        "maxOP": 10,
+        "maxIP": 1,
+        "minOP": 1,
+        "minIP": 1
+      },
+      "textbox": {
+        "show": true,
+        "allowChange": false,
+        "value": "API",
+        "size": "12",
+        "color": "black",
+        "background-color": "",
+        "weight": "",
+        "border-size": "",
+        "border-color": "",
+        "height": "",
+        "width": ""
+      },
+      "iconbox": {
+        "show": true,
+        "allowChange": false,
+        "value": "fa fa-list-alt",
+        "size": "12",
+        "color": "black",
+        "background-color": "",
+        "weight": "bolder",
+        "border-size": "",
+        "border-color": "",
+        "height": "",
+        "width": ""
+      },
+      "innerbox": {
+        "show": true,
+        "allowChange": false,
+        "value": "",
+        "size": "12",
+        "color": "black",
+        "background-color": "#80ffaa",
+        "weight": "bold",
+        "border-size": "",
+        "border-color": "#8c8c8c",
+        "height": "",
+        "width": ""
+      },
+      "components": ["c2"]
+    },
+      {
+      "id": "af.opr.String",
+      "description": "String Concatenation",
+      "category": "String Operations",
+      "ports": {
+        "hasInport": false,
+        "hasOutport": true,
+        "allowIPExt": false,
+        "allowOPExt": false,
+        "maxOP": 1,
+        "maxIP": 1,
+        "minOP": 1,
+        "minIP": 1
+      },
+      "textbox": {
+        "show": true,
+        "allowChange": false,
+        "value": "Concatenate",
+        "size": "12",
+        "color": "black",
+        "background-color": "",
+        "weight": "",
+        "border-size": "",
+        "border-color": "",
+        "height": "",
+        "width": ""
+      },
+      "iconbox": {
+        "show": true,
+        "allowChange": false,
+        "value": "fa fa-list-alt",
+        "size": "12",
+        "color": "black",
+        "background-color": "",
+        "weight": "bolder",
+        "border-size": "",
+        "border-color": "",
+        "height": "",
+        "width": ""
+      },
+      "innerbox": {
+        "show": true,
+        "allowChange": false,
+        "value": "",
+        "size": "12",
+        "color": "black",
+        "background-color": "#df80ff",
+        "weight": "bold",
+        "border-size": "",
+        "border-color": "#8c8c8c",
+        "height": "",
+        "width": ""
+      },
+      "components": ["c2"]
+    }
+  ],
+  "runtime": [
+    {
+      "id": "af.opr.Function"
+    },
+    {
+      "id": "af.opr.Logger"
+    }
+  ],
+  "operators": [
+    {
+      "id": "af.opr.Function",
+      "name": "operator 1",
+      "description": ""
+    },
+    {
+      "id": "af.opr.Logger",
+      "name": "operator 2",
+      "description": ""
+    }
+  ],
+  "flows": [
+    {
+      "id": "flow-D82Lfo",
+      "description": "test flow",
+      "operators": [],
+      "connections": []
+    }
+   
+  ],
+  "connections": [],
+  "ports": [
+    {
+      "id": "p1",
+      "type": "inport",
+      "operator": "op1"
+    },
+    {
+      "id": "p2",
+      "type": "outport",
+      "operator": "op2"
+    }
+  ],
+  "components": [
+    {
+      "id": "c1",
+      "name": "codeEditor",
+      "label": "Function",
+      "visible": true,
+      "config": {
+          "showSaveFunction": true
+      },
+      "runtime": {}    
+    },
+      {
+      "id": "c2",
+      "name": "portConfig",
+      "label": "Ports",
+      "visible": true,
+      "config": {
+          "showSaveFunction": true
+      },
+      "runtime": {}
+    },
+      {
+      "id": "c3",
+      "name": "apperance",
+      "label": "Apperance",
+      "visible": true,
+      "config": {
+         "showLabelEditor": true,
+          "showIconEditor": true          
+      },
+      "runtime": {}
+    }
+  ]
+}
