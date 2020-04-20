@@ -1,0 +1,31 @@
+.function-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.function-form-field-width {
+  width: 100%;
+}
+
+mat-icon,
+i {
+  cursor: pointer;
+}
+
+mat-icon:hover,
+i:hover {
+  color: tomato;
+}
+
+.code-toolbar {  
+  width: 100%;
+} 
+
+.btn-toolbar{
+  margin-left: 10%;
+}
+
+.code-toolbar .cdtoolbar{
+  margin: 10px;
+}

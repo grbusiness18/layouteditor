@@ -1,0 +1,54 @@
+<div class="code-toolbar mb-2" id="codeToolBar" *ngIf="showMarkDownToolBar">
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+      <div class="btn-group mr-2" role="group" aria-label="First group">
+        <button type="button" class="btn btn-secondary" (click)="onToolBarBtnClick('B')">
+          <i class="fa fa-bold"></i>
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="onToolBarBtnClick('I')">
+          <i class="fa fa-italic"></i>
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="onToolBarBtnClick('C')">
+          <i class="fa fa-code"></i>
+        </button>
+      </div>
+      <div class="btn-group mr-2" role="group" aria-label="Second group">
+        <button type="button" class="btn btn-secondary" (click)="onToolBarBtnClick('h1')">
+          <span class="font-weight-bolder">h1</span>
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="onToolBarBtnClick('h2')">
+          <span class="font-weight-bold">h2</span>
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="onToolBarBtnClick('h3')">
+          <span class="font-weight-bold">h3</span>
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="onToolBarBtnClick('h4')">
+          <span class="font-weight-bold">h4</span>
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="onToolBarBtnClick('h5')">
+          <span class="font-weight-bold">h5</span>
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="onToolBarBtnClick('h6')">
+          <span class="font-weight-bold">h6</span>
+        </button>
+      </div>
+      <div class="btn-group" role="group" aria-label="Third group">
+        <button type="button" class="btn btn-secondary" (click)="onToolBarBtnClick('ol')">
+          <i class="fa fa-list-ol"></i>
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="onToolBarBtnClick('ul')">
+          <i class="fa fa-list-ul"></i>
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="onToolBarBtnClick('quote')">
+          <i class="fa fa-quote-left"></i>
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="onToolBarBtnClick('hr')">
+          <i class="fa fa-minus"></i>
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="onToolBarBtnClick('link')">
+          <i class="fa fa-link"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+<div class="code-editor" #markDownEditor></div>

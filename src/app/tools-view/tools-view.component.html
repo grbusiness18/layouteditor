@@ -1,0 +1,24 @@
+  <div class="container p-4 bg-white">
+    <mat-list>
+      <h3 mat-subheader class="text-secondary border-bottom">Folders</h3>
+      <mat-list-item *ngFor="let op of ops; let i = index" class="bg-secondary borer-bottom rounded mt-3"
+        (dblclick)="onToolButton(i)">
+        <div class="cbox" id="cbox-{{i+1}}">
+          <div class="port inport" *ngIf="op.metadata.config.hasInport" id="inport-{{i+1}}"></div>
+          <div class="operator" id="operator-{{i+1}}">
+            <table>
+              <tr>
+                <td class="iconbox" *ngIf="op.metadata.config.hasIcon">
+                  <i class="{{op.metadata.iconbox.value}}"></i>
+                </td>
+                <td class="textbox" *ngIf="op.metadata.config.hasText">
+                  {{op.metadata.textbox.value}}
+                </td>
+              </tr>
+            </table>                      
+          </div>
+          <div class="port outport" *ngIf="op.metadata.config.hasOutport" id="outport-{{i+1}}"></div>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>

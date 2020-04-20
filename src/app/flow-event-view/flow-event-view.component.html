@@ -1,0 +1,188 @@
+<div class="container-fluid">
+  <div class="row mt-2 p-2 border-bottom">
+    <h3> Event Configuration</h3>
+  </div>
+  <div class="mt-2">
+    <span class="text-secondary small mt-2">
+      <mat-slide-toggle [checked]="showSelTime" (change)="onChange($event, true)">Show Time</mat-slide-toggle>
+    </span>
+  </div>
+
+  <div class="row mt-2 p-2 border-bottom" *ngIf="!showSelTime">
+    <div class="col-6">
+      <span class="text-secondary small">Minutes</span>
+      <div class="input-group port-counter mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Every..</span>
+        </div>
+        <div class="input-group-append">
+          <input type="number" class="form-control" placeholder="No of ports" aria-label="" min="1" max="60" step="1"
+            aria-describedby="Minutes" value="-" (input)="valuechange($event)" id="minute-counter">
+        </div>
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon2">Minutes</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <span class="text-secondary small">Hours</span>
+      <div class="input-group port-counter mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Every..</span>
+        </div>
+        <div class="input-group-append">
+          <input type="number" class="form-control" placeholder="No of ports" aria-label="" min="0" max="23" step="1"
+            aria-describedby="Hours" value="-" (input)="valuechange($event)" id="hour-counter">
+        </div>
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon2">Hours</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row mt-2 p-2 border-bottom" *ngIf="showSelTime">
+    <span class="text-secondary small">Time</span>
+    <div class="input-group port-counter mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">AT</span>
+      </div>
+      <div class="input-group-append">
+        <input type="number" class="form-control" placeholder="No of ports" aria-label="" min="0" max="23" step="1"
+          aria-describedby="Hours" value="-" (input)="valuechange($event)" id="time-hour-counter">
+      </div>
+      <div class="input-group-append">
+        <input type="number" class="form-control" placeholder="No of ports" aria-label="" min="0" max="60" step="1"
+          aria-describedby="minutes" value="-" (input)="valuechange($event)" id="time-min-counter">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row mt-2 p-2 border-bottom">
+    <span class="text-secondary small mt-1">Days of Week</span>
+
+    <span class="text-secondary small ml-3">
+      <mat-slide-toggle [checked]="showSelDay" (change)="onShowDay($event)">Show Select Day</mat-slide-toggle>
+    </span>
+
+    <div class="input-group mt-2" *ngIf="showSelDay">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Only on..</span>
+      </div>
+      <div class="input-group-append ml-2">
+        <mat-form-field>
+          <mat-label>Days of Week</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let dw of daysofweek" [value]="dw.key">
+              {{dw.value}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row mt-2 p-2" #days>
+    <span class="text-secondary small mt-1">Months</span>
+    <span class="text-secondary small ml-5">
+      <mat-slide-toggle [checked]="showSelMonth" (change)="onChange($event, false)">Select specific months
+      </mat-slide-toggle>
+    </span>
+    <ng-container *ngIf="showSelMonth">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Only ON </span>
+        </div>
+        <div class="input-group-append ml-2">
+          <mat-form-field>
+            <mat-label>Months Name</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let mn of months" [value]="mn.key">
+                {{mn.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+
+  <div class="row mt-1 p-2  text-secondary">
+    <mat-radio-group aria-label="Select an option" [(ngModel)]="showMonthConfig">
+      <mat-radio-button value="1" (change)="radioChange($event)">
+        <span class="small">At</span>
+      </mat-radio-button>
+
+      <mat-radio-button value="2" (change)="radioChange($event)">
+        <span class="small">Every</span>
+      </mat-radio-button>
+      <mat-radio-button value="3" (change)="radioChange($event)">
+        <span class="small">On</span>
+      </mat-radio-button>
+    </mat-radio-group>
+
+  </div>
+  <!-- Rules -->
+  <div class="row mt-2 p-2 border-bottom" *ngIf="showMonthConfig === '1'">
+    <span class="text-secondary small mt-1">AT Configuration</span>
+    <div class="input-group port-counter mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">At..</span>
+      </div>
+      <div class="input-group-append  ml-2 mr-2">
+        <mat-form-field>
+          <mat-label>days</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let at of atdays" [value]="at.key">
+              {{at.value}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon2">day</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-2 p-2 border-bottom" *ngIf="showMonthConfig === '2'">
+    <span class="text-secondary small">Every Configuration</span>
+
+    <div class="input-group port-counter mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Every..</span>
+      </div>
+      <div class="input-group-append  ml-2 mr-2">
+        <input type="number" class="form-control" placeholder="No of ports" aria-label="" min="1" max="31" step="1"
+          aria-describedby="days" value="-" (input)="valuechange($event)" id="days-counter">
+      </div>
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon2">days</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row mt-2 p-2 border-bottom" *ngIf="showMonthConfig === '3'">
+    <span class="text-secondary small">On Configuration</span>
+    <div class="input-group port-counter mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">On</span>
+      </div>
+      <div class="input-group-append  ml-2 mr-2">
+        <input type="number" class="form-control" placeholder="No of ports" aria-label="" min="1" max="31" step="1"
+          aria-describedby="days" value="-" (input)="valuechange($event)" id="days-counter">
+      </div>
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon2">day of the month</span>
+      </div>
+    </div>
+  </div>
+
+</div>

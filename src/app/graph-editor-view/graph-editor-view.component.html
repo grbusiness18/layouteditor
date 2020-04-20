@@ -1,0 +1,44 @@
+<div class="container bg-white">
+  <div class="row">
+    <div class="col-10">
+
+    </div>
+    <div class="col-2">
+      <mat-icon class="mt-3 ml-1" aria-hidden="false" aria-label="settings" (click)="onSaveFlow()">save
+      </mat-icon>
+      <mat-icon class="mt-3 ml-1" aria-hidden="false" aria-label="deploy">cloud_upload</mat-icon>
+    </div>    
+  </div>
+</div>
+
+<div class="container" id="layout" *ngIf="showContent">
+  <div class="conbox" id="cbox-edit-{{op.id}}" *ngFor="let op of oFLOW.operators; let ix = index;">
+    <div class="operator" id="operator-edit-{{op.id}}" >
+      <div class="innerbox" id="innerbox-edit-{{op.id}}" *ngIf="op.metadata.innerbox.show"
+        [ngStyle]="doGetInnerBox(op)" (click)="onOperatorClick(op.id)" (dblclick)="onOperatorDblClick(op.id)">
+        <table class="operatortab">
+          <tr>
+            <td class="iconbox" *ngIf="op.metadata.iconbox.show">
+              <i class="{{op.metadata.iconbox.value}}"></i>
+            </td>
+            <td class="textbox" *ngIf="op.metadata.textbox.show">
+              {{op.metadata.textbox.value}}
+            </td>
+          </tr>
+        </table>
+      </div>
+      <ng-container *ngIf="op.metadata.ports.hasInport">
+        <div class="portholder" [ngStyle]="doPortPositioning(op, true)">
+          <div class="portbox inport" id="inport-edit-{{ip.id}}" *ngFor="let ip of op.inports; let ipx = index;" (click)="onPortSelect(op, ip.id, true)"></div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="op.metadata.ports.hasOutport">
+        <div class="outportholder" [ngStyle]="doPortPositioning(op, false)">
+          <div class="portbox outport" id="outport-edit-{{out.id}}" *ngFor="let out of op.outports; let opx = index;" (click)="onPortSelect(op, out.id, false)">
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="svgbox" id="idsvgbox"></div>
+</div>

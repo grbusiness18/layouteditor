@@ -1,0 +1,75 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col" *ngIf="data.metadata.ports.hasOutport">
+      <div class="input-group port-counter mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01"><i class="material-icons rotate-right">
+              settings_input_component
+            </i> &nbsp; Outports</label>
+        </div>
+        <div class="input-group-append">
+          <input type="number" class="form-control" placeholder="No of ports" aria-label=""
+            min="{{data.metadata.ports.minOP}}" max="{{data.metadata.ports.maxOP}}" aria-describedby="basic-addon1"
+            value="{{outports.length}}" (input)="valuechange($event)" id="outport-counter">
+        </div>
+      </div>
+    </div>
+    <div class="col-6" *ngIf="data.metadata.ports.hasInport">
+      <div class="input-group port-counter mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect02"><i class="material-icons rotate-left">
+              settings_input_component
+            </i> &nbsp; Inports</label>
+        </div>
+        <div class="input-group-append">
+          <input type="number" class="form-control" placeholder="No of ports" aria-label=""
+            min="{{data.metadata.ports.minIP}}" max="{{data.metadata.ports.maxIP}}" aria-describedby="basic-addon1"
+            value="{{inports.length}}" (input)="valuechange($event)" id="inport-counter">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <ng-container *ngIf="data.metadata.ports.hasOutport">
+      <div class="col-6">
+        <mat-list>
+          <mat-list-item *ngFor="let op of outports; let i = index;">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text">{{i + 1}}</label>
+              </div>
+              <input type="text" class="form-control" placeholder="Port Name for #{{ i+ 1}}" aria-label="Port Name"
+                aria-describedby="basic-addon2" value="{{op.name}}">
+              <div class="input-group-append" *ngIf=" (i+1) > data.metadata.ports.minIP">
+                <i class="material-icons ml-3 mt-2" (click)="onDeletePort(i, 'op')">
+                  delete
+                </i>
+              </div>
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="data.metadata.ports.hasInport">
+      <div class="col-6">
+        <mat-list>
+          <mat-list-item *ngFor="let ip of inports; let i = index;">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text">{{i + 1}}</label>
+              </div>
+              <input type="text" class="form-control" placeholder="Port Name for #{{ i+ 1}}" aria-label="Port Name"
+                aria-describedby="basic-addon2" value="{{ip.name}}">
+              <div class="input-group-append" >
+                <i class="material-icons ml-3 mt-2" (click)="onDeletePort(i, 'ip')">
+                  delete
+                </i>
+              </div>
+            </div>
+          </mat-list-item>
+        </mat-list>
+
+      </div>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-2">
+      <span *ngIf="data.config.showLabelEditor">Label</span>
+    </div>
+    <div class="col-4">
+      <ng-container *ngIf="data.config.showLabelEditor">
+        <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked" [disabled]="disabled">
+          Hide
+        </mat-slide-toggle>
+      </ng-container>
+    </div>
+    <div class="col-2">
+      <span *ngIf="data.config.showIconEditor">Icon</span>
+    </div>
+
+    <div class="col-4">
+      <ng-container *ngIf="data.config.showIconEditor">
+        <mat-form-field>
+          <mat-label>select icon</mat-label>
+          <select matNativeControl required>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+        </mat-form-field>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <ng-container>
+      <div class="col">
+        <app-markdown-view [data]="data"></app-markdown-view>
+      </div>
+    </ng-container>
+  </div>
+</div>
+

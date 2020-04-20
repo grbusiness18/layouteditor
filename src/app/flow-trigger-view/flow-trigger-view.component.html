@@ -1,0 +1,24 @@
+<div class="container border mt-3 p-2 shadow">
+  <div class="row ml-3 mt-3 p-3 d-flex">
+    <!--
+    <span class="text-secondary small mt-1 ml-4 mr-4">
+      <mat-slide-toggle [checked]="showEvent" (change)="onChange($event)">Toggle Api / Event Configuration</mat-slide-toggle>
+    </span>
+    -->
+    <div class="btn-group align-self-center mx-auto" role="group" aria-label="Configuration">
+      <button mat-raised-button color="{{(showEvent?'secondary': 'primary')}}" autofocus="true" (click)="onChange($event, true)" id="btn-api">Api Configuration</button>
+      <button mat-raised-button color="{{(showEvent?'primary': 'secondary')}}" (click)="onChange($event, false)" id="btn-event">Event Configuration</button>
+    </div>
+
+    <mat-icon aria-hidden="false" aria-label="Close Window" (click)="onCloseEvent()">close</mat-icon>
+
+  </div>
+  <div class="row">
+    <div class="col p-5" *ngIf="!showEvent">
+      <app-flow-api-view></app-flow-api-view>
+    </div>
+    <div class="col p-5" *ngIf="showEvent">
+      <app-flow-event-view></app-flow-event-view>
+    </div>
+  </div>
+</div>

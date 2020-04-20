@@ -1,0 +1,11 @@
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 20px;
+  }
+
+  i {
+    cursor: pointer;
+  }
+
+  .mat-radio-label-content{
+    font: smaller !important;
+  }

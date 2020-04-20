@@ -1,0 +1,33 @@
+<div class="container-fluid mt-2">
+  <div class="row mt-2" *ngIf="data.config.showSaveFunction">
+    <div class="col-8">
+      <form class="function-form">
+        <mat-form-field class="function-form-field-width">
+          <input matInput placeholder="Function name" value="">
+        </mat-form-field>
+      </form>
+    </div>
+    <div class="col-2">
+    </div>
+    <div class="col-2">
+      <i class="material-icons mt-3">
+        folder_open
+      </i>
+      <i class="material-icons mt-3 ml-3">
+        save
+      </i>
+    </div>
+  </div>
+
+  <div class="row">
+    <span class="ml-5">
+      <code>function (msg)</code>
+    </span>
+  </div>
+  <div class="code-editor" #codeEditor></div>
+  <div class="row">
+    <span class="ml-5">
+      <code>return msg;</code>
+    </span>
+  </div>
+</div>

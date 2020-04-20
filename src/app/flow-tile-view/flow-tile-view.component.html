@@ -1,0 +1,27 @@
+<div class="contianer" *ngIf="showTiles">  
+    <div class="flows">  
+      <div class="tile" (dblclick)="onFlowClick(flow)">
+        <div class="idbox mt-1">
+          <h2>create</h2>
+        </div>
+        <div class="settingsbox mt-1">
+          <mat-icon aria-hidden="false" aria-label="add" (click)="onAddNewFlow()">add</mat-icon>
+        </div>
+        <div class="textbox mt-1">
+         Create new flow
+        </div>
+      </div>
+
+      <div class="tile" *ngFor="let flow of FLOWS; let ix = index;" (dblclick)="onFlowClick(flow)">
+        <div class="idbox mt-1">
+          <h2>{{flow.id.split("-")[1]}}</h2>
+        </div>
+        <div class="settingsbox mt-1">
+          <mat-icon aria-hidden="false" aria-label="add" (click)="onFlowDblClick(flow)">settings</mat-icon>
+        </div>
+        <div class="textbox mt-1">
+          {{flow.description}}
+        </div>
+      </div>     
+    </div>  
+</div>

@@ -1,0 +1,84 @@
+
+.operator {  
+  border: solid 2px grey;
+  border-radius: 10px;
+  font-size: small;
+  text-align: center;  
+  background-color: white;      
+  position: relative;
+ 
+}
+
+.conbox {
+  cursor: pointer;
+  max-width: 160px !important; 
+}
+
+.iconbox {
+  width: 30px;
+  height: 30px;    
+}
+
+.textbox {
+  width: 80px;
+  height: 30px;  
+}
+
+.innerbox{
+  position: absolute;  
+  left: 5%;
+}
+
+.portholder{
+  top:0px;
+  left: -7px;
+  width: 20px;
+  position: absolute;  
+}
+
+.outportholder{  
+  width: 20px;
+  top: 0px;   
+  left: 153px;
+  position: absolute;  
+}
+
+
+.portbox {
+  height: 10px;
+  width: 10px;
+  border: 1px solid #808080;
+  background-color: lightgray;
+  border-radius: 20%;
+  cursor: crosshair;  
+}
+
+.inportx{
+  left:5px;
+}
+
+.outportx{
+  left:-5px;
+}
+
+i{
+  font-size: 12px;
+}
+
+.svgbox{
+  position: absolute;
+  top:0 !important;
+  z-index: -1;
+}
+
+.selectedItem{
+  border: 2px solid green;
+}
+
+.selectedPort{
+  background-color: green;
+}
+
+.selectedLine{
+  stroke: green;
+}

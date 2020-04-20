@@ -1,0 +1,68 @@
+.innerbox {
+  display: inline-block;
+  border: solid 2px grey;
+  border-radius: 10px;
+  font-size: small;
+  text-align: center;
+  background-color: white;
+}
+
+.cbox {
+  cursor: pointer;
+  min-width: 200px !important;
+}
+
+.iconbox {
+  width: 30px;
+  height: 30px;
+  border-right: solid 2px #808080;
+}
+
+.textbox {
+  width: 120px;
+  height: 30px;
+}
+
+.port {
+  height: 10px;
+  width: 10px;
+  position: relative;
+  border: 1px solid #808080;
+  background-color: lightgray;
+  border-radius: 20%;
+  display: inline-block;
+  cursor: crosshair;
+  top: -10px;
+}
+
+.inport {
+  left: 5px;
+}
+
+.outport {
+  left: -5px;
+}
+.mat-list-item {
+  background-color: white !important;
+  margin-top: 0 !important;
+}
+
+i {
+  font-size: 12px;
+}
+
+.selectedOperator {
+  border: 1px solid green;
+}
+
+.mat-expansion-panel {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.mat-expansion-panel-header-title{
+  color: grey !important
+}

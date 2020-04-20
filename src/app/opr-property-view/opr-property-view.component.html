@@ -1,0 +1,46 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-11">
+      <h4>edit function - {{ operatorID }}</h4>
+    </div>
+    <div class="col-1 text-right">
+      <mat-icon aria-hidden="false" aria-label="Close Window" (click)="onCloseEvent()">close</mat-icon>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-1">
+      <button mat-raised-button color="secondary" (click)="onDeleteOperator()">Delete</button>
+    </div>
+    <div class="col-9"></div>
+    <div class="col-1">
+      <button mat-raised-button color="secondary" (click)="onCancelOperator()">Cancel</button>
+    </div>
+    <div class="col-1">
+      <button mat-raised-button color="primary"  (click)="onSaveOperator($event)">Save</button>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt-2">
+
+  <mat-tab-group>
+
+    <mat-tab label="{{comp.label}}" *ngFor="let comp of components; let ix = index;">
+      <ng-container *ngIf="comp.name === 'codeEditor'">
+        <app-code-view [data]="comp" (codeConfigEvent)="codeConfigEvent($event)"></app-code-view>
+      </ng-container>
+
+      <ng-container *ngIf="comp.name === 'apperance'">
+        <app-apperance-view [data]="comp" (apperanceConfigEvent)="apperanceEditorEvent($event)">
+        </app-apperance-view>
+      </ng-container>
+
+      <ng-container *ngIf="comp.name === 'portConfig'">
+        <app-port-config-view [data]="opr" (portConfigEvent)="portConfigEvent($event)"></app-port-config-view>
+      </ng-container>
+        
+    </mat-tab>
+  </mat-tab-group>
+
+</div>

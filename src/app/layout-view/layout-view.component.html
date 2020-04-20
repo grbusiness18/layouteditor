@@ -1,0 +1,69 @@
+<div class="container" id="layout">
+  <div class="holder" *ngFor="let op of ops; let ix = index;">
+    <div class="conbox" id="cbox-edit-{{op.id}}" (dblclick)="onElementClick(op.id)">
+      <div class="operator" id="operator-edit-{{op.id}}" (click)="onOperatorClick(op.id, 'h', ix)">
+        <ng-container *ngIf="op.metadata.config.hasInport">
+          <div class="portholder" id="portholder-edit-{{op.id}}-{{ipx}}"
+            *ngFor="let ip of op.runtime.inports; let ipx = index;">
+            <div class="portbox inport" id="inport-edit-{{op.id}}-{{ipx}}" (click)="onClick(op.id, 'ip', ipx)"></div>
+          </div>
+        </ng-container>
+        <div class="innerbox" id="innerbox-edit-{{op.id}}">
+          <table class="operatortab">
+            <tr>
+              <td class="iconbox" *ngIf="op.metadata.config.hasIcon">
+                <i class="{{op.metadata.iconbox.value}}"></i>
+              </td>
+              <td class="textbox" *ngIf="op.metadata.config.hasText">
+                {{op.metadata.textbox.value}}
+              </td>
+            </tr>
+          </table>
+        </div>
+        <ng-container *ngIf="op.metadata.config.hasOutport">
+          <div class="outportholder" id="outportholder-edit-{{op.id}}-{{opx}}"
+            *ngFor="let out of op.runtime.outports; let opx = index;">
+            <div class="portbox outport" id="outport-edit-{{op.id}}-{{opx}}" (click)="onClick(op.id, 'op', opx)">
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="svgbox" id="idsvgbox"></div>
+</div>
+
+
+<!--
+
+<div class="container" id="layout">
+
+  <div class="holder" *ngFor="let op of ops; let ix = index;">
+    <div class="conbox" id="cbox-edit-{{op.id}}" (dblclick)="onElementClick(op.id)">
+
+      <div class="operator" id="operator-edit-{{op.id}}" (click)="onClick(op.id, 'h')">
+        <div class="portholder" *ngFor="let ip of op.runtime.inports; let ipx = index;">
+          <div class="portbox inport" *ngIf="op.metadata.config.hasInport" id="inport-edit-{{op.id}}-{{ipx}}"
+            (click)="onClick(op.id, 'ip')"></div>
+        </div>
+        <table class="operatortab">
+          <tr>
+            <td class="iconbox" *ngIf="op.metadata.config.hasIcon">
+              <i class="{{op.metadata.iconbox.value}}"></i>
+            </td>
+            <td class="textbox" *ngIf="op.metadata.config.hasText">
+              {{op.metadata.textbox.value}}
+            </td>
+          </tr>
+        </table>
+        <div class="outportholder" id="outportholder-{{op.id}}" *ngFor="let out of op.runtime.outports; let opx = index;">
+          <div class="portbox outport" *ngIf="op.metadata.config.hasOutport" id="outport-edit-{{op.id}}-{{opx}}"
+            (click)="onClick(op.id, 'op')"></div>
+        </div>
+      </div>
+    </div>
+    <div class="svgbox" id="idsvgbox"></div>
+  </div>
+
+
+  -->

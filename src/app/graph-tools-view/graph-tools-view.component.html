@@ -1,0 +1,29 @@
+  <mat-accordion class="mt-3">
+    <mat-expansion-panel *ngFor="let gr of groups;let ix = index;">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{gr.category | titlecase}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list>
+        <mat-list-item *ngFor="let mt of gr.nodes; let i = index" class="bg-secondary borer-bottom rounded mt-3">
+          <div class="cbox" id="cbox-{{ix+1}}-{{i+1}}">
+            <div class="port inport" *ngIf="mt.ports.hasInport" id="inportbase-{{ix+1}}-{{i+1}}"></div>
+            <div class="innerbox" id="innerbox-{{ix+1}}-{{i+1}}" (click)="onOperatorClick(mt.id)">
+              <table>
+                <tr>
+                  <td class="iconbox" *ngIf="mt.iconbox.show" id="iconbox-{{ix+1}}-{{i+1}}">
+                    <i class="{{mt.iconbox.value}}"></i>
+                  </td>
+                  <td class="textbox" *ngIf="mt.textbox.show" id="textbox-{{ix+1}}-{{i+1}}">
+                    {{mt.textbox.value}}
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="port outport" *ngIf="mt.ports.hasOutport" id="outportbase-{{ix+1}}-{{i+1}}"></div>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+  </mat-accordion>

@@ -1,0 +1,62 @@
+.panel-ui {
+  background: linear-gradient(
+      to right,
+      rgba(100, 100, 0, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(100, 100, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+#tools-ui-box {
+  position: absolute;
+  min-height: 100%;
+  left: 0;
+  border: 2px solid gray;
+  max-width: 250px;
+  width: 250px;
+}
+
+#editor-ui-box {
+  position: absolute;
+  overflow-y: scroll;
+  border: 2px solid grey;
+  min-height: 100%;
+  min-width: 250px;
+  left: 0;
+
+  background: linear-gradient(
+      to right,
+      rgba(100, 100, 0, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(100, 100, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+
+}
+
+#output-ui-box {
+  position: absolute;
+  right: 0;
+  min-height: 100%;
+  border: 2px solid gray;
+  max-width: 300px;
+  width: 300px;
+}
+
+.close-handle {
+  position: absolute;
+  top: 47%;
+  width: 20px;
+  height: 50px;
+  border: 1px solid gray;
+  background-color: orange;
+}
+
+.close-handle-left {
+  left: 0;
+}
+
+.close-handle-right {
+  right: 0;
+}
